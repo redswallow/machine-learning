@@ -1,10 +1,9 @@
 function IG=ig(y,x)
 % IG = ig(y,x)
 % calculate the information gian: IG(y)=H(y)-H(y,x); y,x are two vectors
-    H=0;
+    xP=[];xEntropy=[];
     for i=unique(x)'
-        xP=length(x(find(x==i))')/length(x);
-        xEntropy=entropy(y(find(x==i)));
-        H=H+xP*xEntropy;
+        xP=[xP length(x(x==i)')/length(x)];
+        xEntropy=[xEntropy entropy(y(x==i))];
     end;
-    IG=entropy(y)-H;
+    IG=entropy(y)-xP*xEntropy';
