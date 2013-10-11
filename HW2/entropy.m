@@ -1,4 +1,6 @@
 function H=entropy(y)
-        yinfo=tabulate(y);
-        yhist=yinfo(:,3)'/100;
-        H=-yhist*log2(yhist)';
+% H = entropy(y)
+% calculate the entropy of vector y
+    yinfo=tabulate(y);
+    yhist=yinfo(:,3)'/100;  %percentage of each unique value in y
+    H=-yhist*log2(yhist)';
