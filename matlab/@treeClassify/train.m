@@ -13,7 +13,7 @@ function obj=train(obj, data,target, Nmin,DepthMax,VarMin,nFeat)
   if (nargin < 7) nFeat = round(D/2); else nFeat=min(nFeat,D); end;
 
   % Get class id values and replace with values 1..C  
-  [Y, obj.classes] = toIndex(target);
+  [target, obj.classes] = toIndex(target);
   %obj.classes = unique(target);
   %Y = target; for i=1:length(obj.classes) Y(target==obj.classes(i))=i; end; target=Y;
   
