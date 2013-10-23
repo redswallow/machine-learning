@@ -1,5 +1,5 @@
 import preparation
-import plots
+import plotter
 import utils
 import knn
 
@@ -8,7 +8,7 @@ def datingClassTest():
     k=3
     features,labels= preparation.file2matrix('datingTestSet2.txt')
     features=utils.normalize(features)
-    #plots.scatter(features[:,0],features[:,1],labels)
+    #plotter.scatter(features[:,0],features[:,1],labels)
     numTestVecs=int(ratio*features.shape[0])
     errorCount = 0.0
     for i in range(numTestVecs):
